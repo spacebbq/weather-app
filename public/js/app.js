@@ -10,6 +10,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
+    messageThree.textContent = ''
 
     fetch(`http://localhost:3000/weather?address=${location}`).then((response) => {
         response.json().then((data) => {
@@ -19,6 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 messageOne.textContent = data.location.location
                 messageTwo.textContent = data.forecast.summary
+                messageThree.textContent = 'It is currently ' + data.forecast.currentTemp + ' Degrees Celsius'
                 console.log(data.location)
                 console.log(data.forecast)
 

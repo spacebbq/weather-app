@@ -36,7 +36,7 @@ app.get("/about", (req, res) => {
     res.render("about", {
         title: "About Me",
         name: "Camille Chabaro"
-    }, res, req);
+    });
 });
 
 // Help Page
@@ -45,7 +45,7 @@ app.get("/help", (req, res) => {
     res.render("help", {
         title: "Help",
         name: "Camille Chabaro",
-        helptext: "I AM IN NEED OF HELP MOTHERFUCKER"
+        helptext: "Help Page"
     });
 });
 
@@ -71,6 +71,8 @@ app.get("/weather", (req, res) => {
                 }
                 return res.send({
                     forecast: dataForecast,
+                    currentTemperature: dataForecast.currentTemp,
+                    currentPrecipitation: dataForecast.currentPrecip,
                     location: dataLocation,
                     address: req.query.address
                 });
