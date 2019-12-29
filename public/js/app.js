@@ -21,7 +21,7 @@ weatherForm.addEventListener("submit", e => {
         messageOne.textContent = data.location.location;
         messageTwo.textContent = data.forecast.summary;
         messageThree.textContent =
-          "It is currently " + data.forecast.currentTemp + " Degrees Celsius";
+          "It is currently " + data.forecast.currentTemp + " Degrees Celsius and the current chance of rain is " + data.forecast.currentPrecip;
         console.log(data.location);
         console.log(data.forecast);
       }
